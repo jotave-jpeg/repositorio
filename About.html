@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Sobre</title>
     <style>
         * {
             margin: 0;
@@ -37,20 +37,6 @@
             line-height: 1.6;
             align-items: center;
             justify-content: center;
-        }
-        @keyframes pulse {
-            0% {
-                transform: scale(0%);
-                opacity: 50%;
-            }
-            50% {
-                transform: scale(100%);
-                opacity: 100%;
-            }
-            100% {
-                transform: scale(25%);
-                opacity: 0%;
-            }
         }
         @keyframes rotation{
             100% {
@@ -126,14 +112,6 @@
             margin: 10px 0px;
             font: bold 15px Arial, sans-serif;
         }
-        div#carregamento {
-            width: 50px;
-            height: 50px;
-            background-color: rosybrown;
-            justify-content: center;
-            align-items: center;
-            animation: pulse 1s infinite;
-        }
     </style>
 </head>
 <body>
@@ -152,42 +130,25 @@
             </ul>
         </nav>
      </div>   
-    <div id="escurecer">
-        <main>
-            <p>Olá, me chamo João Victor e esse é meu portfólio, aqui estará meus projetos recentes</p>
-            <p>Mensagem do dia, to aprendendo keyframes bonitos, exemplo abaixo</p>
-            <div id="carregamento">
-                <div id="f1"></div>
-                <div id="f2"></div>
-                <div id="f3"></div>
-            </div>
-        </main>
-    </div>
     <script>
+
         var smenu = document.getElementById("smenu");
         smenu.style.display = "none";
         function clique() {
             var menu = document.getElementById("menu");
-            var escurecer = document.getElementById("escurecer");
             if (smenu.style.display === "none" || smenu.style.display === "") {
                smenu.style.animation = "slidein 0.5s forwards";
                smenu.style.display = "block";
                menu.style.animation = "rotation 0.5s forwards";
-                escurecer.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-                escurecer.style.animation = "fadein 0.2s forwards";
-                escurecer.style.width = "100%";
-                escurecer.style.height = "100%";
             } else {
                smenu.style.animation = "slideout 0.5s forwards";
                 setTimeout(function() {
-                    escurecer.style.animation = "fadeout 0.2s forwards";
                      smenu.style.display = "none";
                      menu.style.animation = "rotation 0.5s backwards";
-                        escurecer.style.backgroundColor = "rgba(0, 0, 0, 0)";
-                }, 500); // Wait for the animation to finish before hiding the element
+                },   500);
             }
         }
-        
+
     </script>
 </body>
 </html>
